@@ -79,7 +79,7 @@ Within any system, there are multiple technologies which could, in theory, fulfi
 
 Once a user has determined the technologies they want in their system, either via the method described in the [System-determination interface](#crystal_ball-system-determination-interface) section or through some analytical means independent of the `ceplibrary`, they should be able to
 
-* Import any of the technologies contained within the library
+* Import any of the technologies contained within the library,
 * Evaluate the performance of these technologies, either using models contained within the library or by providing their own specific performance parameters, through the similar method exposed on each, i.e., a solar panel should be callable using the same methods as a heat pump (i.e., both should inherit the same structure for interacting with environmental and energistic inputs and outputs) such that its performance can be evaluated.
 
 ## Requirements
