@@ -123,7 +123,7 @@ The configuration information required will vary depending on the type of model 
 
 * **Technology-agnostic models** will be instantable without any configuration provided, utilising default thermodynamically-driven values;
 * **Data-driven models** will utilise data files contained within the library or from an external source in order to influence the models, again, little user configuration will be required;
-* **Analytical models** will utilise inputs provided by the user when instantiating instances of the various classes which are implementable.
+* **Comprehensive models** will utilise inputs provided by the user when instantiating instances of the various classes which are implementable.
 
 ## Non-functional requirements
 
