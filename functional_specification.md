@@ -36,15 +36,21 @@ Date | Comments
 --- | ---
 21/03/2023 | Document created
 
-## Risks and assumptions
+## Definitions
+
+Term | Definition
+--- | ---
+Component | Devices which carry out a purpose but which cannot, on their own, fulfil an energistic purpose. E.G., a compressor, heat exchanger or a water pump which, on their own, achieve a specific thermodynamic process, e.g., isentropic, isothermal, or polytropic compression for the compressor; isobaric heat transfer for the heat exchanger or liquid (fluid-stream) compression for the water pump.
+Technology | A combination of components which, together, deliver a specific technological solution. E.G., a solar-thermal collector, which is composed of reflectors, heat-transfer tubes, insulation etc.
+System | A combination of technologies and components which, together, deliver a specific solution. E.G., a solar photovoltaic collector, a battery and a heat pump for delivering heat.
 
 ## Use cases
 
 The `Technology-Library`, packaged as `ceplibrary`, aims to provide for several use cases:
 
 1. An open-access, GitHub-hosted repository of Python-based models developed within the CEP Laboratory;
-2. An interface for determining which components could fulfil a specific purpose within a system;
-3. A series of open-access and peer-reviewed models of components which can be easily integrated with eachother and new models being developed in a simple "plug-and-play" style.
+2. An interface for determining which systems could fulfil a specific purpose;
+3. A series of open-access and peer-reviewed models of components, subsystems and systems which can be easily integrated with eachother and new models being developed in a simple "plug-and-play" style.
 
 ### :green_book: Open-access repository
 
