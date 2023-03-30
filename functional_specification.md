@@ -42,7 +42,7 @@ Date | Comments
 Term | Definition
 --- | ---
 Component | Devices which achieve a specific thermodynamic process. E.G., a compressor, heat exchanger or a water pump which, on their own, achieve a specific thermodynamic process, e.g., isentropic, isothermal, or polytropic compression for the compressor; isobaric heat transfer for the heat exchanger or liquid (fluid-stream) compression for the water pump.
-Technology | A combination of components which, together, deliver a specific technological solution. E.G., a solar-thermal collector, which is composed of reflectors, heat-transfer tubes, insulation etc. **Note:**, a single component can be used as a technology provided that it fulfils a technological need as a stand-alone device, e.g., a heat exchanger, which can acts as both a component of a heat pump or as a stand-alone solution for heat-to-heat conversion.
+Technology | A combination of components which, together, deliver a specific technological solution for energy conversion or storage purposes. E.G., a solar-thermal collector, which is composed of reflectors, heat-transfer tubes, insulation etc. or a heat pump, which is composed of a compressor, evaporator, condenser and expansion device. **Note:** a single component can be used as a technology provided that it fulfils a technological need as a stand-alone device, e.g., a heat exchanger, which can acts as both a component of a heat pump or as a stand-alone solution for heat-to-heat conversion.
 System | A combination of technologies and components which, together, deliver a specific solution. E.G., a solar photovoltaic collector, a battery and a heat pump for delivering heat.
 
 ## Use cases
