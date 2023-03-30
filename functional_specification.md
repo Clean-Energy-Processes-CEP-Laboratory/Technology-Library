@@ -7,10 +7,10 @@ This document contains an overview of the functionality required and expected of
 * [Overview](#overview)
   * [Revieweres](#reviewers)
   * [Modification history](#modification-history)
-* [Risks and assumptions](#risks-and-assumptions)
+* [Definitions](#definitions)
 * [Use cases](#use-cases)
   * [Open-access repository](#green_book-open-access-repository)
-  * [Component-determination interface](#crystal_ball-component-determination-interface)
+  * [System-determination interface](#crystal_ball-system-determination-interface)
   * [Plug-and-play modules](#electric_plug-plug-and-play-modules)
 * [Requirements](#requirements)
   * [Interface requirements](#interface-requirements)
@@ -35,13 +35,14 @@ This FS document will be reviewed by [@PaulSapin](https://github.com/paulSapin).
 Date | Comments
 --- | ---
 21/03/2023 | Document created
+30/03/2023 | Revisions with [@PaulSapin](https://github.com/paulSapin)
 
 ## Definitions
 
 Term | Definition
 --- | ---
-Component | Devices which carry out a purpose but which cannot, on their own, fulfil an energistic purpose. E.G., a compressor, heat exchanger or a water pump which, on their own, achieve a specific thermodynamic process, e.g., isentropic, isothermal, or polytropic compression for the compressor; isobaric heat transfer for the heat exchanger or liquid (fluid-stream) compression for the water pump.
-Technology | A combination of components which, together, deliver a specific technological solution. E.G., a solar-thermal collector, which is composed of reflectors, heat-transfer tubes, insulation etc.
+Component | Devices which achieve a specific thermodynamic process. E.G., a compressor, heat exchanger or a water pump which, on their own, achieve a specific thermodynamic process, e.g., isentropic, isothermal, or polytropic compression for the compressor; isobaric heat transfer for the heat exchanger or liquid (fluid-stream) compression for the water pump.
+Technology | A combination of components which, together, deliver a specific technological solution. E.G., a solar-thermal collector, which is composed of reflectors, heat-transfer tubes, insulation etc. **Note:**, a single component can be used as a technology provided that it fulfils a technological need as a stand-alone device, e.g., a heat exchanger, which can acts as both a component of a heat pump or as a stand-alone solution for heat-to-heat conversion.
 System | A combination of technologies and components which, together, deliver a specific solution. E.G., a solar photovoltaic collector, a battery and a heat pump for delivering heat.
 
 ## Use cases
@@ -59,24 +60,24 @@ First and foremost, this repository will provide an open-access interface for ac
 * Find and browse the open-access Python-based models within the library;
 * Be able to read sufficient documentation to understand the structure of, and methodology underpinning, the various models in order to both run the various models and to adapt the code to their needs.
 
-### :crystal_ball: Component-determination interface
+### :crystal_ball: System-determination interface
 
-Within any system, there are multiple components which could, in theory, fulfil similar roles. E.G., to convert sunlight into heat, both a photovoltaic module connected to a heat pump or a solar-thermal panel could carry out this task. As more components are introduced, the number of possible component pathways increases. A user should be able to
+Within any system, there are multiple technologies which could, in theory, fulfil similar roles. E.G., to convert sunlight into heat, both a photovoltaic module connected to a heat pump or a solar-thermal panel could fulfil this need. As more technologies are introduced, the number of possible technology pathways increases. A user should be able to
 
-* Request a list of components/component combinations which are capable of transforming some series of input vectors into some form of output vectors. These "energy" vectors will consist of:
+* Request a list of technlogy combinations which are capable of transforming some series of input vectors into some form of output vectors. These "energy" vectors will consist of:
   * Heat, which has some associated power flow and a temperature,
   * Energy, which has some associated power flow,
   * Irradiance, which has some assocaited energy flux,
-  * Storage, which is simply a timestampt of how long, if applicable, one of these vectors should be stored within the component/system.
+  * Storage, which is simply a timestampt of how long, if applicable, one of these vectors should be stored within the system.
   
-  The software will then determine which possible components can fulfil the role, limited by
+  The software will then determine which possible technologies can fulfil the role, limited by
   * Some target variable, e.g., the overall efficiency of the system,
-  * Some maximum number of components for which a default value will be hard-baked.
+  * Some maximum number of technologies for which a default value will be hard-baked.
 
 
 ### :electric_plug: Plug-and-play modules
 
-Once a user has determined the components they want in their system, either via the method described in the [Component-determination interface](#crystal_ball-component-determination-interface) section or through some analytical means independent of the `ceplibrary`, they should be able to
+Once a user has determined the technologies they want in their system, either via the method described in the [System-determination interface](#crystal_ball-system-determination-interface) section or through some analytical means independent of the `ceplibrary`, they should be able to
 
 * Implement any of the models contained within the library through a similar method exposed on each, i.e., a solar panel should be callable using the same methods as a heat pump such that its performance can be evaluated.
 
@@ -95,15 +96,15 @@ The code should be
 ### Interface requirements
 
 The library should expose a Python-based interface which is capable of
-* Determining, given the set of inputs and outputs that a user requests, the set of available components or combinations of available components which are capable of carrying out the process requested, with some ranking based on the target criterion that a user specifies;
-* Listing all components contained within the library along with the input and output energy vectors that they are capable of interfacing with.
+* Determining, given the set of inputs and outputs that a user requests, the set of available technologies or combinations of available technologies which are capable of carrying out the process requested, with some ranking based on the target criterion that a user specifies;
+* Listing all technologies contained within the library along with the input and output energy vectors that they are capable of interfacing with.
 
 ### Package requirements
 
 The Python package should
 * Expose all technology-agnostic models for implementation;
 * Expose all data-driven and analytical models contained for implementation externally;
-* Provide an example script showing how these components can be coded to interface together.
+* Provide an example script showing how these technologies can be coded to interface together.
 
 ### Logging requirements
 Sufficient logging should take place throughout to report on
@@ -126,11 +127,10 @@ The configuration information required will vary depending on the type of model 
 ## Non-functional requirements
 
 The package will contain
-* Module-unit tests (MUTs) which carry out automated tests of the functionality of the various modules contained within the code;
-* Component-unit tests (CUTs) which carry out component-level tests of the functionality of the various components contained within the code;
+* Module-unit tests (MUTs) which undertake automated tests of the functionality of the various modules contained within the code;
 * Integration tests (ITs) which will test
   * The integrated models developed which are included in the library;
-  * The component-suggesting code.
+  * The technology-suggesting code.
 
 ## Error reporting
 
